@@ -1,4 +1,4 @@
-# pgweb..
+# pgweb
 
 Simple web-based and cross platform PostgreSQL database explorer.
 

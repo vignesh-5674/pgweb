@@ -30,9 +30,21 @@ jobs:
 
     - name: Build Docker image
       run: |-
-        IMAGE_TAG=${GITHUB_REF##*/}-$GITHUB_RUN_NUMBER
+        echo IMAGE_TAG=${GITHUB_REF##*/}-$GITHUB_RUN_NUMBER >> GITHUB_ENV
         docker build -t pgweb .
         docker tag pgweb gcr.io/disaster-recovery-test-370104/pgweb:$IMAGE_TAG
         docker push gcr.io/disaster-recovery-test-370104/pgweb:$IMAGE_TAG
+
+    - name: Update Image Version in the related HelmChart values.yaml
+      uses: fjogeleit/yaml-update-action@master
+      with:
+        valueFile: 'helm/values.yaml'
+        propertyPath: 'image.tag'
+        value: ${{ env.IMAGE_TAG }}
+        repository: vignesh-5674/pgweb
+        branch: main
+        updateFile: true
+        message: 'feat(helm): Update care image version to ${{ env.IMAGE_TAG }}'
+        token: ${{ secrets.GITHUB }}
 
           

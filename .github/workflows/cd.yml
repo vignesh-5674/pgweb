@@ -39,16 +39,3 @@ jobs:
     - name: install helm release
       run: |-
         helm upgrade pgweb helm
-        
-
-    - name: Update Image Version in the related HelmChart values.yaml
-      uses: fjogeleit/yaml-update-action@master
-      with:
-        valueFile: 'helm/values.yaml'
-        propertyPath: 'image.tag'
-        value: ${{ env.IMAGE-TAG }}
-        repository: vignesh-5674/pgweb
-        branch: main
-        updateFile: true
-        message: 'feat(helm): Update care image version to $IMAGE_TAG'
-        token: ${{ secrets.GITHUB }}

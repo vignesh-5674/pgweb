@@ -46,7 +46,7 @@ jobs:
       with:
         valueFile: 'helm/values.yaml'
         propertyPath: 'image.tag'
-        value: $IMAGE-TAG
+        value: ${{ env.IMAGE-TAG }}
         repository: vignesh-5674/pgweb
         branch: main
         updateFile: true

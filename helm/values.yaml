@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: gcr.io/disaster-recovery-test-370104/pgweb
   pullPolicy: IfNotPresent
-  tag: main-21
+  tag: main-24
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''

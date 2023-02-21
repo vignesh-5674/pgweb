@@ -37,5 +37,4 @@ jobs:
 
     - name: install helm release
       run: |-
-        cd helm
         helm install pgweb helm

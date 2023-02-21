@@ -1,7 +1,7 @@
 name: pgweb ci
 
-on: [push]
-    #branches: [main]
+on: 
+  workflow_dispatch:
 env:
   SOURCE_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
 

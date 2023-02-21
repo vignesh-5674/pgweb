@@ -1,4 +1,4 @@
-name: pgweb
+name: pgweb ci
 
 on: [push]
     #branches: [main]

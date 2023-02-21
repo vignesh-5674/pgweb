@@ -29,10 +29,10 @@ jobs:
         gcloud --quiet auth configure-docker
 
     - id: 'get-credentials'
-        uses: 'google-github-actions/get-gke-credentials@v1'
-        with:
-          cluster_name: 'example-cluster'
-          location: 'us-central1-a'
+      uses: 'google-github-actions/get-gke-credentials@v1'
+      with:
+        cluster_name: 'example-cluster'
+        location: 'us-central1-a'
       
 
     - name: install helm release

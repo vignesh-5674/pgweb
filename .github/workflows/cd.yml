@@ -42,4 +42,4 @@ jobs:
 
     - name: install helm release
       run: |-
-        helm upgrade pgweb helm
+        helm upgrade pgweb helm -n pgweb

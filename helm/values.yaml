@@ -7,9 +7,7 @@ replicaCount: 1
 image:
   repository: gcr.io/disaster-recovery-test-370104/pgweb 
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "5 `"
-
+  tag: main-27
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

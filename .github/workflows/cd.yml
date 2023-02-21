@@ -38,7 +38,7 @@ jobs:
 
     - name: install helm release
       run: |-
-        helm install pgweb helm
+        helm upgrade pgweb helm
         
 
     - name: Update Image Version in the related HelmChart values.yaml

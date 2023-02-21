@@ -30,6 +30,7 @@ jobs:
 
     - name: Build Docker image
       run: |-
+        IMAGE_TAG=${GITHUB_REF##*/}-$GITHUB_RUN_NUMBER
         echo IMAGE_TAG=${GITHUB_REF##*/}-$GITHUB_RUN_NUMBER >> GITHUB_ENV
         docker build -t pgweb .
         docker tag pgweb gcr.io/disaster-recovery-test-370104/pgweb:$IMAGE_TAG

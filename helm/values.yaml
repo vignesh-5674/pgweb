@@ -24,13 +24,8 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-<<<<<<< HEAD
   tls: 
     - secretName: tls-secret
-=======
-  tls:
-    - secretName: web-ssl
->>>>>>> 9ad3365ee851d82a93e299e555ede5633e81d145
       hosts:
         - pgweb.shopups2.xyz
 resources: {}

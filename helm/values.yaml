@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: gcr.io/disaster-recovery-test-370104/pgweb
   pullPolicy: IfNotPresent
-  tag: main-31
+  tag: main-33
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
@@ -24,7 +24,7 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: 
+  tls:
     - secretName: tls-secret
       hosts:
         - pgweb.shopups2.xyz

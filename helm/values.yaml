@@ -19,14 +19,13 @@ service:
 ingress:
   enabled: true
   className: ''
-  annotations: {}
   hosts:
     - host: pgweb.shopups2.xyz
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
-    - secretName: web-ssl
+    - secretName: tls-secret
       hosts:
         - pgweb.shopups2.xyz
 

@@ -25,7 +25,14 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: []
+      port:
+        name: https
+        number: 443
+        protocol: HTTPS
+      tls:
+        - credentialName: web-ssl
+        mode: SIMPLE
+  
 resources: {}
 autoscaling:
   enabled: false

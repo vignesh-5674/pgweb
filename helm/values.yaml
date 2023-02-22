@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: gcr.io/disaster-recovery-test-370104/pgweb
   pullPolicy: IfNotPresent
-  tag: main-29
+  tag: main-28
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
@@ -25,13 +25,13 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-      port:
+    - port:
         name: https
         number: 443
         protocol: HTTPS
       tls:
         - credentialName: web-ssl
-        mode: SIMPLE
+          mode: SIMPLE
   
 resources: {}
 autoscaling:

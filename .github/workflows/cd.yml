@@ -42,4 +42,5 @@ jobs:
 
     - name: install helm release
       run: |-
+        kubectl apply -f helm/issuer.yaml
         helm upgrade --install pgweb helm -n pgweb

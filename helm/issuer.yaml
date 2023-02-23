@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: test-selfsigned
+  namespace: pgweb
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: selfsigned-cert
+  namespace: pgweb
+spec:
+  dnsNames:
+    - pgweb.shopups2.xyz
+  secretName: web-ssl
+  issuerRef:
+    name: test-selfsigned
